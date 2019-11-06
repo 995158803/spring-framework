@@ -1054,7 +1054,7 @@ public abstract class AbstractBeanDefinition extends BeanMetadataAttributeAccess
 	 * came from (for the purpose of showing context in case of errors).
 	 */
 	public void setResourceDescription(@Nullable String resourceDescription) {
-		this.resource = (resourceDescription != null ? new DescriptiveResource(resourceDescription) : null);
+		this.resource = (resourceDescription != null ? (Resource) new DescriptiveResource(resourceDescription) : null);
 	}
 
 	/**
@@ -1071,7 +1071,7 @@ public abstract class AbstractBeanDefinition extends BeanMetadataAttributeAccess
 	 * Set the originating (e.g. decorated) BeanDefinition, if any.
 	 */
 	public void setOriginatingBeanDefinition(BeanDefinition originatingBd) {
-		this.resource = new BeanDefinitionResource(originatingBd);
+		this.resource = (Resource) new BeanDefinitionResource(originatingBd);
 	}
 
 	/**

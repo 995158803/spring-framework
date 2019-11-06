@@ -1,0 +1,12 @@
+一. 容器初始化
+1. 首先通过某种方式加载配置元数据
+2. 对配置元数据进行解析和分析，并将分析的信息组装成BeanDefintion
+3. 将BeanDefinition保存注册到相应的BeanDefinitionRegistry中
+4.至此 springioc初始化完成
+
+二. 加载bena阶段
+1.  初始化阶段后，应用程序定义的bean全部加载到系统中，当我们显示或者隐士调用getBean() 方法，会触发加载bean阶段。
+2.  容器首先会检查所有请求的对象是否已经初始化完成了，如果没有，则会根据注册的bean信息实例化请求的对象，并为其注册依赖，然后将其返回给请求方。
+
+
+三. 干预bean的创建  可以通过实现BeanPostProcessor 接口。
